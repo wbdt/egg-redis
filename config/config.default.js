@@ -1,7 +1,15 @@
 'use strict';
 
+const defaultRedisOptions = {
+  commandTimeout: 500,
+};
+
 exports.redis = {
   default: {
+  },
+  ...defaultRedisOptions,
+  redisOptions: { // cluster
+    ...defaultRedisOptions,
   },
   app: true,
   agent: false,
